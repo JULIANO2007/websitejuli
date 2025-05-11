@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Saya</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Styling -->
+  <style>
+
+    /* CSS global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsif untuk layar HP */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to right, #ce0101a5, #920000);
+      color: #fff;
+      padding: 0 10px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ffffff;
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.1em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #ffffff33;
+    }
+
+    section {
+      padding: 30px 15px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.08);
+      margin-top: 30px;
+      border-radius: 12px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    section h2 {
+      color: #ffd700;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    section ul {
+      padding-left: 20px;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 12px;
+      margin: 10px 0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    /* Animations */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ffd700;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #ffd700;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .school-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.school-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+}
+
+.school-item:hover {
+  transform: translateY(-5px);
+}
+
+.school-item img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffd700;
+  transition: box-shadow 0.4s ease-in-out, transform 0.4s ease;
+}
+
+.school-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ffd700, 0 0 40px #fff;
+}
+
+.school-item p {
+  color: #fff;
+  max-width: 400px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .school-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #1e1e1e;
+  padding: 20px;
+  border-left: 6px solid #FFD700;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+}
+
+.timeline-year {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #FFD700;
+  min-width: 150px;
+  animation: glowText 2s infinite alternate;
+}
+
+.timeline-content {
+  color: #f0f0f0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #fff;
+  }
+  100% {
+    text-shadow: 0 0 15px #FFD700, 0 0 25px #fff;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-year {
+    min-width: unset;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Tentang Saya 👋</h1>
+    <nav>
+      <a href="#perkenalan">Perkenalan</a>
+      <a href="#tujuan">Tujuan Website</a>
+      <a href="#citacita">Cita-cita</a>
+      <a href="#visi">Visi Misi</a>
+      <a href="#sekolah">Sekolah</a>
+      <a href="#timeline">Timeline</a>
+      <a href="index.html">Back</a>
+    </nav>
+    <p>
+      Selamat datang di halaman pribadi saya! Halaman ini berisi informasi tentang saya, tujuan website ini, serta perjalanan dan visi masa depan saya. 🌱
+    </p>
+  </header>
+
+  <!-- Perkenalan Diri -->
+  <section id="perkenalan">
+    <h2 style="text-align: center;">Perkenalan Diri 👨‍💻</h2>
+    <p><strong>Nama Lengkap:</strong> MARIO JULIANO SUBAGIYO </p>
+    <p><strong>Asal Daerah:</strong> Dusun Krajan RT. 28 RW. 5 Desa Jatisari Kecamatan Tajinan Kabupaten Malang</p>
+    <p><strong>Hobi:</strong> Membaca 📚, Menulis ✍️ & Mendengarkan Musik 🎶</p>
+  </section>
+
+  <!-- Tujuan Website -->
+  <section id="tujuan">
+    <h2 style="text-align: center;">Tujuan Website 🎯</h2>
+    <p>
+        Website ini dibuat sebagai bagian dari tugas sekolah yang tidak hanya bertujuan untuk memenuhi kewajiban akademik, tetapi juga sebagai sarana untuk belajar secara lebih mendalam dan berbagi berbagai karya yang saya buat, baik itu dalam bentuk materi, proyek, maupun karya-karya lainnya yang saya harap dapat bermanfaat dan memberikan inspirasi bagi orang lain.
+    </p>
+  </section>
+
+  <!-- Cita-cita -->
+  <section id="citacita">
+    <h2 style="text-align: center;">Cita-cita 🌟</h2>
+    <p>
+        Saya memiliki cita-cita yang besar untuk menjadi seorang game developer dan pengembang animasi yang inovatif, menciptakan pengalaman digital yang tidak hanya menghibur, tetapi juga menginspirasi dan mendidik generasi masa depan. Dengan kreativitas dan semangat tak kenal lelah, saya bertekad untuk mengubah dunia melalui karya-karya yang memadukan teknologi dan seni.
+    </p>
+  </section>
+
+  <!-- Visi dan Misi -->
+  <section id="visi">
+    <h2 style="text-align: center;">Visi dan Misi 🎯</h2>
+    <h3>Visi:</h3>
+    <p>
+        Mewujudkan masa depan yang cerah melalui pembelajaran yang terus-menerus, pemanfaatan teknologi yang inovatif, serta pengembangan kreativitas yang tak terbatas. Kami percaya bahwa dengan menggabungkan pengetahuan dan keterampilan dalam berbagai bidang, kita dapat menciptakan peluang baru, membuka jalan menuju kesuksesan, dan memberi dampak positif bagi masyarakat. 🌍
+    </p>
+    <h3>Misi:</h3>
+    <ul>
+      <li>Belajar konsisten 📅 dan berkembang setiap hari 💪</li>
+      <li>Mengembangkan kemampuan teknologi 💻 dan berbagi karya 🤝</li>
+      <li>Berbagi ilmu lewat website 🌐 dan membangun komunitas 🤗</li>
+    </ul>
+  </section>
+
+ <!-- Timeline Sekolah -->
+<section id="sekolah">
+  <h2 style="text-align: center;">About My School 📚</h2>
+  <div class="school-timeline">
+    <div class="school-item">
+      <img src="img/sd.jpg" alt="Foto SD" class="glow-img">
+      <p><strong>2014 - 2020:</strong><br> SDN 1 SUMBERREJO BOJONEGORO 🏫</p>
+    </div>
+    <div class="school-item">
+      <img src="img/smp.jpg" alt="Foto SMP" class="glow-img">
+      <p><strong>2020 - 2023:</strong><br> SMPN 1 BULULAWANG 🏫</p>
+    </div>
+    <div class="school-item">
+      <img src="img/smk.jpg" alt="Foto SMK" class="glow-img">
+      <p><strong>2023 - 2026:</strong><br> SMKN 10 MALANG 🏫</p>
+    </div>
+  </div>
+</section>
+
+ <!-- Timeline My Life -->
+<section id="timeline">
+  <h2 style="text-align: center;">Timeline My Life 📅</h2>
+  <div class="timeline-container">
+    <div class="timeline-item">
+      <div class="timeline-year" >2007 - 2014 : </div>
+      <div class="timeline-content" style="text-align: center;">
+Saya lahir pada 15 Juli 2007. Saat kecil, saya seperti anak-anak pada umumnya suka bermain dan penasaran terhadap banyak hal. Namun, saya lebih sering menghabiskan waktu di rumah karena kedua orang tua saya sibuk bekerja dan sering tidak berada di rumah. Sejak kecil, saya diasuh oleh kakak saya sendiri yang usianya terpaut cukup jauh, sekitar 15 tahun. Kehidupan masa kecil saya cenderung tenang dan sederhana, lebih banyak diisi dengan aktivitas di rumah bersama kakak yang merawat saya dengan penuh perhatian.      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2014 - 2020</div>
+      <div class="timeline-content">
+Saya mulai masuk SD pada tahun 2014. Karena jaraknya sangat dekat dari rumah, saya pergi ke sekolah sendiri tanpa diantar, dan sejak kecil sudah dibiasakan mandiri. Meski belum lancar membaca saat masuk SD, saya sudah menguasai perkalian dan pembagian sejak TK. Saya baru fasih membaca di kelas 2, dan selama SD saya senang bermain catur karena bisa melatih strategi dan fokus. Masa SD hingga awal SMP menjadi waktu penting bagi saya untuk mengenal diri sendiri, menemukan minat, dan perlahan memperbaiki kemampuan belajar saya. </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year" >2020 - 2023</div>
+      <div class="timeline-content"  style="text-align: center;">
+Setelah lulus SD, saya melanjutkan ke SMP dan harus pindah dari Bojonegoro ke Malang untuk tinggal bersama kakak, sementara orang tua tetap di kampung. Awalnya berat karena saya harus meninggalkan zona nyaman, dan hal itu membuat saya menjadi lebih pendiam. Namun, dari situ saya mulai belajar arti kemandirian. Dengan dukungan keluarga, saya mulai fokus memperbaiki diri, terutama dalam hal akademik. Saya percaya bahwa perpisahan ini adalah proses menuju kedewasaan dan masa depan yang lebih baik.      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year"  style="text-align: center;">2023  seterusnya</div>
+      <div class="timeline-content">
+Pada tahun 2023, saya masuk SMK jurusan Teknik Komputer dan Jaringan (TKJ), meski orang tua awalnya ingin saya masuk SMA. Saya memilih jalur ini karena ingin langsung belajar hal yang berkaitan dengan dunia kerja. Awalnya mendaftar di SMK 1, namun diterima di SMK 10, dan saya tetap berusaha memberikan yang terbaik.
+Selama di SMK, saya mulai memperbaiki diri dengan mengikuti ekstrakurikuler silat, Bahasa Inggris, dan bergabung dengan OSIS. Sayangnya, awal sekolah saya sempat terganggu karena sakit TBC dan harus absen lebih dari dua minggu. Meski begitu, saya tidak menyerah dan terus mengejar ketertinggalan.
+Saya percaya, setiap rintangan justru membentuk saya menjadi pribadi yang lebih kuat dan siap menghadapi masa depan.      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mario Juliano Subagiyo 🖋️</p>
+  </footer>
+
+  <script>
+  // Tambahkan efek glow dinamis jika mau (opsional, hanya visual tambahan)
+  document.querySelectorAll('.glow-img').forEach(img => {
+    img.addEventListener('mousemove', (e) => {
+      img.style.boxShadow = `0 0 15px #ffd700, 0 0 30px #fff`;
+    });
+
+    img.addEventListener('mouseleave', () => {
+      img.style.boxShadow = `0 0 10px #ffd700`;
+    });
+  });
+
+  
+  // Fade-in animation saat scroll
+  const timelineItems = document.querySelectorAll('.timeline-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  timelineItems.forEach(item => {
+    item.style.opacity = 0;
+    item.style.transform = "translateY(50px)";
+    observer.observe(item);
+  });
+
+
+</script>
+
+</body>
+</html>

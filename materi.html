@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Materi TKJ SMK</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url(img/background\ materi.jpg) no-repeat center center fixed;
+      background-size: cover;
+      padding: 100px 20px 80px;
+      line-height: 1.6;
+    }
+
+    header, footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #000000; /* tidak transparan */
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  z-index: 999;
+}
+
+
+
+    header {
+      top: 0;
+    }
+
+    footer {
+      bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .slide {
+      background-color: rgb(0, 0, 0);
+      border-radius: 12px;
+      border-left: 5px solid #d40000;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .slide:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: translateY(-5px);
+    }
+
+    .slide img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-bottom: 3px solid #00ffff;
+    }
+
+    .slide-content {
+      padding: 15px;
+    }
+
+    .slide h2 {
+      color: #00ffff;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .slide p {
+      color: #e0e0e0;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 80px 10px 70px;
+      }
+
+      .slide h2 {
+        font-size: 1rem;
+      }
+
+      .slide img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Materi TKJ SMK - Dasar Komputer & Jaringan</h1>
+  </header>
+
+  <div class="container">
+    <!-- Contoh satu kotak materi -->
+    <a href="BAB 1 PEKERJAAN PEKERJAAN KOMPUTER.docx" download>
+      <article class="slide">
+        <img src="img/bab 1.jpeg" alt="BAB 1">
+        <div class="slide-content">
+          <h2>📄 BAB 1 : Pekerjaan Pekerjaan </h2>
+          <p>Meliputi instalasi, perakitan, dan pemrograman perangkat.</p>
+        </div>
+      </article>
+    </a>
+
+    <!-- Duplikat bagian ini untuk setiap materi, ganti gambar dan teks -->
+    <a href="BAB 2 K3LH.docx" download>
+      <article class="slide">
+        <img src="img/bab2.jpeg" alt="BAB 2">
+        <div class="slide-content">
+          <h2>📄 BAB 2 : K3LH (keselamatn Hidup) </h2>
+          <p>Keselamatan kerja dan pengelolaan limbah elektronik.</p>
+        </div>
+      </article>
+    </a>
+
+    <a href="BAB 3 hardware.docx" download>
+      <article class="slide">
+        <img src="img/bab3.jpeg" alt="BAB 3">
+        <div class="slide-content">
+          <h2>📄 BAB 3 : Perangkat hardware</h2>
+          <p>Mengenal komponen fisik komputer..</p>
+        </div>
+      </article>
+    </a>
+
+    <a href="BAB 4  ip address.docx" download>
+      <article class="slide">
+        <img src="img/bab4.jpeg" alt="BAB 4">
+        <div class="slide-content">
+          <h2>📄 BAB 4 : Internet protocol adress </h2>
+          <p>Pembahasan tentang alamat IP, fungsi, dan jenis IP dalam jarkom.</p>
+        </div>
+      </article>
+    </a>
+
+    <!-- Tambahkan BAB 3 hingga 13 seperti contoh di atas -->
+  </div>
+
+   <div class="container">
+    <!-- Contoh satu kotak materi -->
+    <a href="BAB 5 alokasi.docx" download>
+      <article class="slide">
+        <img src="img/bab5.jpeg" alt="BAB 5">
+        <div class="slide-content">
+          <h2>📄 BAB 5 : Alokasi Jaringan Ip</h2>
+          <p>Penjelasan tentang pembagian dan penentuan alamat IP.</p>
+        </div>
+      </article>
+    </a>
+
+    <!-- Duplikat bagian ini untuk setiap materi, ganti gambar dan teks -->
+    <a href="BAB 6 pengkabelan].docx" download>
+      <article class="slide">
+        <img src="img/bab6.jpeg" alt="BAB 6">
+        <div class="slide-content">
+          <h2>📄 BAB 6 : Pengkabelan Jarkom</h2>
+          <p>Meliputi jenis kabel, teknik , dan aturan.</p>
+        </div>
+      </article>
+    </a>
+
+    <a href="BAB 7 fungsi dalaman motherboard.docx" download>
+      <article class="slide">
+        <img src="img/gambar7.jpeg" alt="BAB 7">
+        <div class="slide-content">
+          <h2>📄 BAB 7 : Perangkat dalam Mothearboard </h2>
+          <p>Mempelajari komponen penting di motherboard dan fungsinya </p>
+        </div>
+      </article>
+    </a>
+
+    <a href="Bab 8 Jarkom.docx" download>
+      <article class="slide">
+        <img src="img/bab8.jpeg" alt="BAB 8">
+        <div class="slide-content">
+          <h2>📄 BAB 8 : Jaringann Komputer </h2>
+          <p>Dasar-dasar jaringan komputer, jenis jaringan, dan fungsinya.</p>
+        </div>
+      </article>
+    </a>
+
+    <!-- Tambahkan BAB 3 hingga 13 seperti contoh di atas -->
+  </div>
+
+   <div class="container">
+    <!-- Contoh satu kotak materi -->
+    <a href="BAB 9 topologi.docx" download>
+      <article class="slide">
+        <img src="img/bab9.jpeg" alt="BAB 9">
+        <div class="slide-content">
+          <h2>📄 BAB 9 : Topologi  Jaringan  </h2>
+          <p>Membahas bentuk-bentuk topologi jaringan dan kelebihan serta kekurangannya.</p>
+        </div>
+      </article>
+    </a>
+
+    <!-- Duplikat bagian ini untuk setiap materi, ganti gambar dan teks -->
+    <a href="BAB 10 mikrotik.docx" download>
+      <article class="slide">
+        <img src="img/gambar10.webp" alt="BAB 10">
+        <div class="slide-content">
+          <h2>📄 BAB 10 : Instalasi Mikrotik </h2>
+          <p>Langkah-langkah instalasi dan konfigurasi awal router Mikrotik untuk jaringan.</p>
+        </div>
+      </article>
+    </a>
+
+    <a href="BAB 11 debian.docx" download>
+      <article class="slide">
+        <img src="img/]bab11.jpeg" alt="BAB 11">
+        <div class="slide-content">
+          <h2>📄 BAB 11 : Installasi Debian </h2>
+          <p>Panduan instalasi sistem operasi Debian sebagai server jaringan dasar pada debian.</p>
+        </div>
+      </article>
+    </a>
+
+    <a href="BAB 12 PEMORGAMAN.docx" download>
+      <article class="slide">
+        <img src="img/bab12.jpeg" alt="BAB 2">
+        <div class="slide-content">
+          <h2>📄 BAB 12: Pemograman Dasar </h2>
+          <p>Pengenalan logika dasar pemrograman dan pembuatan program sederhana.</p>
+        </div>
+      </article>
+    </a>
+
+    <!-- Tambahkan BAB 3 hingga 13 seperti contoh di atas -->
+  </div>
+
+  <footer style="display: flex; justify-content: space-between; align-items: center;">
+    <span>&copy; 2025 Website Materi TKJ SMK | <strong>MARIO JULIANO SUBAGIYO</strong></span>
+    <li style="list-style: none;"><a href="index.html">back</a></li>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> WEBSITE MARIO JULIANO</title>
+ <style>
+
+  /* CSS global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsif untuk layar HP */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+}
+
+   
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #270f0f, #432020, #642c2c);
+      color: #f5f5f5;
+      animation: fadeIn 1s ease-in;
+    }
+
+    nav {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 1em;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav a {
+      color: #ff9900;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    header {
+      text-align: center;
+      margin-top: 2em;
+      animation: fadeUp 1s ease-out;
+    }
+
+    header img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #ff0000;
+      box-shadow: 0 0 25px #ff0000;
+      transition: transform 0.5s ease;
+      animation: pulse 2s infinite;
+    }
+
+    header img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0.5em 0 0.2em;
+    }
+
+    p {
+      margin: 0.5em 1em;
+      line-height: 1.6;
+    }
+
+    article {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      padding: 1em;
+      animation: fadeUp 1.5s ease-out;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "✓ ";
+      color: #ff0000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2em;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-top: 3em;
+      font-size: 0.9em;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 15px #ffe100;
+      }
+      50% {
+        box-shadow: 0 0 35px #00f0ff;
+      }
+      100% {
+        box-shadow: 0 0 15px #0015ff;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .container {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  animation: fadeUp 1.5s ease-out;
+}
+
+.container h1 {
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 0.5em;
+}
+
+.description {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 1.5em;
+  color: #e0e0e0;
+}
+
+.info {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+  font-size: 1em;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.info p {
+  margin: 0.5em 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.buttons a {
+  text-decoration: none;
+  background-color: #ff9900;
+  color: white;
+  padding: 0.8em 1.2em;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-size: 0.95em;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.buttons a:hover {
+  transform: scale(1.05);
+  background-color: #ffcc00;
+  color: #000;
+}
+
+.social-icons {
+  margin: 1em 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0.9);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover img {
+  transform: scale(1.2) rotate(10deg);
+  filter: brightness(1.2) drop-shadow(0 0 5px #fff);
+}
+
+
+ </style>
+  </head>
+  <body>
+<nav>
+        <a href="index.html">Home</a> l
+        <a href="about.html">Tentang saya</a> l
+        <a href="portofolio.html">Portofolio</a> l
+        <a href="materi.html">Materi</a> l
+        <a href="soal.html"> Kuis </a> l
+
+    </nav>
+    <hr />
+    <header style="text-align: center;">
+        <img src= "img/poto profi .jpg" width="200" height="200" style="border-radius: 50%;"/>
+        <h1>MARIO JULIANO SUBAGIYO</h1>
+        <p>[TEKNIK KOMPUTER DAN JARINGAN]</p>
+        </header>
+        <hr />
+    <article style="text-align: center;">
+        <h2>Deskripsi</h2>
+        <p>
+            Halo semuanya! Perkenalkan, nama saya Mario Juliano Subagiyo. Saya adalah siswa dari SMKN 10 Malang, saat ini duduk di bangku kelas XI TKJ 2 (Teknik Komputer dan Jaringan). Saya sangat tertarik pada dunia teknologi, khususnya dalam bidang jaringan komputer, sistem operasi, dan perangkat keras.
+            Sebagai pelajar di jurusan TKJ, saya mempelajari berbagai hal seputar teknologi informasi dan komunikasi
+            Di sekolah, saya juga terbiasa melakukan praktik langsung di laboratorium komputer, mengerjakan proyek jaringan, dan berkolaborasi dengan teman-teman dalam mengembangkan solusi teknologi. Saya percaya bahwa kemampuan teknis yang saya pelajari sekarang akan sangat bermanfaat di dunia kerja maupun saat melanjutkan ke jenjang pendidikan yang lebih tinggi.
+Senang bisa berbagi sedikit tentang diri saya. Terima kasih!
+        </p>
+    </article>
+    <hr />
+    <div style="max-width: 600px; margin: 3em auto">
+        <table  width="100%">
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Pengalaman</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li> Editor Video</li>
+                            <li> Rakit Komputer</li>
+                            <li> Setting Mikortik</li>
+                            <li> Pebgkabelan </li>
+                            <li> Englis Communiaction </li>
+                            <li> HTML</li>
+                            <li> CSS </li>
+                            <li> Javascript </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li> Edit Video </li>
+                            <li> Rakit Komputer</li>
+                            <li> Setiing instalasi Mikortik </li>
+                            <li> Memasang Kabel RJ 45 </li>
+                            <li> English Club </li>
+                            <li> HTML </li>
+                            <li> CSS </li>
+                            <li> Javascript </li>                          
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+
+    <div class="container">
+      
+  <h1>Kontak Saya</h1>
+  <p class="description">
+    Jika kamu ingin ngobrol, bertanya, atau sekadar menyapa,<br>
+    silakan hubungi saya lewat kontak di bawah ini:
+  </p>
+
+  <div class="info">
+    <p><strong>Nama:</strong> Mario Juliano Subagiyo </p>
+    <p><strong>Nomor HP:</strong> +62 858-4311-1576</p>
+    <p><strong>Email:</strong> mariojuliano2007@gmail.com</p>
+  </div>
+
+  <div class="buttons">
+    <a href="https://wa.me/6285843111576" target="_blank" class="whatsapp">💬 WhatsApp Saya</a>
+    <a href="mailto:mariojuliano2007@gmail.com" class="email">📧 Kirim Email</a>
+    <a href="index.html" class="back"> BACK ==> </a>
+  </div>
+<footer>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/julianokunz1507?igsh=eW9kdmFuNHRuMmU5" target="_blank" class="social-icon ig" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/share/1AYdHh5fej/" target="_blank" class="social-icon fb" title="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://youtube.com/@mariojuliano2007?si=WFqmI1B2r9pIlMrLu" target="_blank" class="social-icon yt" title="YouTube">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+    </a>
+  </div>
+  <p>@ MARIO JULIANO SUBAGIYO.</p>
+</footer>
+
+
+    <script>
+  document.querySelectorAll('.buttons a').forEach(button => {
+    button.addEventListener('click', () => {
+      button.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        button.style.transform = 'scale(1)';
+      }, 150);
+    });
+  });
+
+  
+  document.querySelectorAll('.social-icon').forEach(icon => {
+    icon.addEventListener('mouseover', () => {
+      icon.style.opacity = '0.8';
+    });
+    icon.addEventListener('mouseout', () => {
+      icon.style.opacity = '1';
+    });
+  });
+
+
+</script>
+
+  </body>
+</html>

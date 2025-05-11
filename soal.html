@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis TKJ</title>
+  <style>
+/* CSS global */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsif untuk layar HP */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+}
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff416c, #ff4b2b);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .question {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+      transition: transform 0.2s, color 0.3s;
+    }
+
+    label:hover {
+      transform: scale(1.05);
+      color: #ffd700;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 24px;
+      background-color: #ff4b2b;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff416c;
+      transform: scale(1.05);
+    }
+
+    #result {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    #result.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Kuis Teknik Komputer dan Jaringan</h2>
+  <div id="quiz-container"></div>
+  <button onclick="submitQuiz()">Kirim Jawaban</button> 
+  <h3 id="result"></h3> 
+    <li><a style="color: black;" href="index.html" >back</a></li>
+
+  <script>
+  const quizData = [
+  { question: "1. Apa kepanjangan dari LAN?", options: ["Local Access Network", "Limited Area Network", "Local Area Network", "Long Access Network"], answer: "Local Area Network" },
+  { question: "2. Perangkat yang digunakan untuk menghubungkan dua jaringan berbeda adalah...", options: ["Switch", "Router", "Hub", "Modem"], answer: "Router" },
+  { question: "3. Urutan warna kabel straight yang benar menurut standar T568B adalah...", options: ["Putih Hijau, Hijau, Putih Orange, Orange", "Putih Orange, Orange, Putih Hijau, Biru", "Hijau, Putih Hijau, Orange, Putih Orange", "Biru, Putih Biru, Hijau, Orange"], answer: "Putih Orange, Orange, Putih Hijau, Biru" },
+  { question: "4. Kabel jenis crossover digunakan untuk menghubungkan...", options: ["Komputer ke printer", "Komputer ke switch", "Komputer ke komputer", "Switch ke router"], answer: "Komputer ke komputer" },
+  { question: "5. Perangkat jaringan yang mengatur lalu lintas jaringan disebut...", options: ["NIC", "Modem", "Router", "Crimping"], answer: "Router" },
+  { question: "6. Fungsi repeater dalam jaringan adalah...", options: ["Membagi bandwidth", "Memperkuat sinyal", "Mengkonversi IP", "Mengatur DNS"], answer: "Memperkuat sinyal" },
+  { question: "7. Kelebihan dari topologi star adalah...", options: ["Hemat kabel", "Biaya murah", "Mudah ditambah node", "Jika 1 node rusak, semua mati"], answer: "Mudah ditambah node" },
+  { question: "8. Topologi yang semua komputer terhubung satu sama lain disebut...", options: ["Star", "Bus", "Mesh", "Ring"], answer: "Mesh" },
+  { question: "9. Layer ke-3 dalam OSI adalah...", options: ["Session", "Transport", "Network", "Data Link"], answer: "Network" },
+  { question: "10. Layer yang bertanggung jawab terhadap komunikasi antaraplikasi adalah...", options: ["Transport", "Application", "Session", "Presentation"], answer: "Application" },
+  { question: "11. IP address kelas C memiliki range...", options: ["1–126", "128–191", "192–223", "224–239"], answer: "192–223" },
+  { question: "12. Subnet mask default untuk kelas B adalah...", options: ["255.255.255.0", "255.255.0.0", "255.0.0.0", "255.255.255.255"], answer: "255.255.0.0" },
+  { question: "13. Teknologi nirkabel yang digunakan pada jaringan lokal adalah...", options: ["Bluetooth", "WiFi", "Infrared", "GPS"], answer: "WiFi" },
+  { question: "14. Fungsi dari access point adalah...", options: ["Menghubungkan internet ke PC", "Menghubungkan sinyal radio ke ISP", "Penghubung perangkat wireless ke jaringan kabel", "Penguat sinyal seluler"], answer: "Penghubung perangkat wireless ke jaringan kabel" },
+  { question: "15. Manajemen bandwidth dilakukan untuk...", options: ["Mematikan koneksi user", "Membatasi pengguna internet", "Membagi kecepatan secara adil", "Mengurangi tagihan internet"], answer: "Membagi kecepatan secara adil" },
+  { question: "16. Salah satu aplikasi manajemen bandwidth adalah...", options: ["Winamp", "NetLimiter", "Adobe", "WinRAR"], answer: "NetLimiter" },
+  { question: "17. Berikut ini termasuk serangan jaringan, kecuali...", options: ["DDoS", "Phishing", "Firewall", "Sniffing"], answer: "Firewall" },
+  { question: "18. Fungsi firewall dalam jaringan adalah...", options: ["Menyebarkan virus", "Melindungi dari serangan luar", "Mengakses situs", "Menyimpan data"], answer: "Melindungi dari serangan luar" },
+  { question: "19. Winbox digunakan untuk...", options: ["Mengakses FTP", "Instalasi OS", "Mengelola Mikrotik lewat GUI", "Memonitor jaringan Windows"], answer: "Mengelola Mikrotik lewat GUI" },
+  { question: "20. Perintah dasar untuk melihat IP address di terminal Mikrotik adalah...", options: ["/ip address print", "show ip", "display ip", "ifconfig"], answer: "/ip address print" },
+  { question: "21. Debian adalah salah satu distribusi dari...", options: ["Microsoft", "BSD", "Linux", "Solaris"], answer: "Linux" },
+  { question: "22. File ekstensi instalasi Debian biasanya berformat...", options: [".exe", ".tar", ".deb", ".rpm"], answer: ".deb" },
+  { question: "23. Tag HTML untuk membuat paragraf adalah...", options: ["text", "para", "p", "h"], answer: "p" },
+  { question: "24. CSS digunakan untuk...", options: ["Membuat struktur web", "Mengatur tampilan halaman", "Menyimpan database", "Memberi logika"], answer: "Mengatur tampilan halaman" },
+  { question: "25. Fungsi alert() dalam JavaScript adalah...", options: ["Menampilkan pesan ke pengguna", "Menyembunyikan teks", "Menambahkan style", "Membuat elemen"], answer: "Menampilkan pesan ke pengguna" }
+];
+
+  ;
+
+  const quizContainer = document.getElementById("quiz-container");
+
+  // Menampilkan soal ke layar
+  quizData.forEach((q, index) => {
+    const div = document.createElement("div");
+    div.className = "question";
+    div.innerHTML = `<p>${q.question}</p>` +
+      q.options.map(opt => `
+        <label>
+          <input type="radio" name="q${index}" value="${opt}"> ${opt}
+        </label>`).join("");
+    quizContainer.appendChild(div);
+  });
+
+  // Fungsi submit yang menampilkan nilai dalam persen
+  function submitQuiz() {
+    let score = 0;
+    quizData.forEach((q, index) => {
+      const selected = document.querySelector(`input[name="q${index}"]:checked`);
+      if (selected && selected.value === q.answer) {
+        score++;
+      }
+    });
+    const resultEl = document.getElementById("result");
+    const percentage = (score / quizData.length) * 100;
+    resultEl.innerText = `Nilai kamu: ${percentage.toFixed(0)}% (${score} dari ${quizData.length} soal benar)`;
+    resultEl.classList.add("show");
+  }
+</script>
+
+</body>
+</html>
